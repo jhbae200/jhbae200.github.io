@@ -1,6 +1,14 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
 html {
   font-family: 'Noto Sans KR', sans-serif;
+}
+a {
+  color: #26a69a;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 .fa {
   display: block;
@@ -48,4 +56,19 @@ html {
 #search .input-field label.active {
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+ul.post-tags li {
+  display: inline-block;
+}
+ul.post-tags li:not(:first-child) {
+  margin-left: 0.8rem;
+}
+ul.post-tags li a {
+  color: #4db6ac; /* teal lighten-2 */
+}
+.post-list .post-content a {
+  color: #424242;
+}
+.post-info p {
+  margin: 0;
 }
