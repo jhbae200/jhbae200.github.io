@@ -1,17 +1,23 @@
 ---
 layout: default
 ---
-<div class="main-post">
-  <h1 class="title">
-    {{ page.title }}
-  </h1>
-  <span>{{ page.date | date: '%Y-%m-%d %H:%M' }}</span>
-  <p>
-    {{ content }}
-  </p>
-  <ul class="main-post-tag">
-    {% for tag in page.tags %}
-      <li>{{ tag }}</li>
-    {% endfor %}
-  </ul>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="main-post">
+        <h1 class="title">
+          {{ page.title }}
+        </h1>
+        <span>{{ page.date | date: '%Y-%m-%d %H:%M' }}</span>
+        <p>
+          {{ content }}
+        </p>
+        <ul class="main-post-tag">
+          {% for tag in page.tags %}
+            <li>{{ tag }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
