@@ -26,8 +26,11 @@ facebook_username: jhbae200
 # Build settings
 markdown: kramdown
 theme: minima
+paginate: 7
+tag_build: true
 gems:
   - jekyll-feed
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock
