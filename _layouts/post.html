@@ -12,7 +12,7 @@ layout: default
           {{ content }}
         <ul class="post-tags">
           {% for tag in page.tags %}
-            <li><a href="#"># {{ tag }}{% if forloop.last != true %},{% endif %}</a></li>
+            <li><a href="{{ site.baseurl }}{% link search.html %}?q={{tag}}"># {{ tag }}{% if forloop.last != true %},{% endif %}</a></li>
           {% endfor %}
         </ul>
       </div>

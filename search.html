@@ -1,0 +1,80 @@
+---
+layout: none
+title: Search
+permalink: /search
+---
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    {% include navbar.html %}
+    <main>
+      <section>
+        <div class="container">
+          <div class="row" id="result">
+            <h3><span id="query">${query}</span> 검색 결과</h3>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% include footer.html %}
+    {% include modal.html %}
+    {% include script.html %}
+    <script>
+      var q = location.search.split('?q=')[1]?decodeURIComponent(location.search.split('?q=')[1]):'';
+      $("#query").html('\"'+q.replace(/</g, "&lt;").replace(/>/g, "&gt;")+'\"');
+      $.ajax({
+        url: '{{ "/tags" | relative_url }}',
+        success: function(data) {
+          var json_data = JSON.parse(data);
+          console.log(q);
+          if(q in json_data) {
+            $.each(json_data[q], function(index, value) {
+              var output = '';
+              output += '<div class=\"col s12 \">';
+              output += '<div class="post-list">';
+              output += '  <h4>';
+              output += '    <a href="'+value.url+'">';
+              output += '      '+value.title;
+              output += '    </a>';
+              output += '  </h4>';
+              output += '  <div class="row post-info">';
+              output += '    <div class="col s6 left-align">';
+              output += '      <p>'+value.writer+'</p>';
+              output += '    </div>';
+              output += '    <div class="col s6 right-align">';
+              output += '      <p>'+value.date+'</p>';
+              output += '    </div>';
+              output += '  </div>';
+              output += '  <p class="post-content">';
+              output += '    <a href="'+value.url+'">'+value.content+'</a>';
+              output += '  </p>';
+              output += '  <ul class="post-tags">';
+              $.each(value.tags, function(index, tag) {
+                if ( tag == q) {
+                  output += '      <li class="active"><a href="/search?q='+tag+'"># '+tag+((index == value.tags.length-1)?'':',')+'</a></li>';
+                } else {
+                  output += '      <li><a href="/search?q='+tag+'"># '+tag+((index == value.tags.length-1)?'':',')+'</a></li>';
+                }
+              })
+              output += '  </ul>';
+              output += '</div>';
+              output += '<hr class="post-hr">';
+              output += '</div>';
+              $("#result").append(output);
+              console.log(value);
+            });
+          } else {
+            var output = '';
+            output += '<div class=\"col s12 \">';
+            output += '<h3>검색 결과가 없습니다.</h3>';
+            output += '</div>';
+            $("#result").append(output);
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

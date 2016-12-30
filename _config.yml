@@ -16,9 +16,7 @@
 title: Jinhwan's Blog
 email: jhbae200@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  생각하자
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  jhbae200
@@ -28,6 +26,7 @@ markdown: kramdown
 theme: minima
 paginate: 7
 tag_build: true
+safe: true
 gems:
   - jekyll-feed
   - jekyll-paginate
