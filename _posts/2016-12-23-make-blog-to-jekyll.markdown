@@ -4,6 +4,7 @@ title:  "Jeykll로 블로그 제작하기"
 writer: "배진환"
 date:   2016-12-30 12:00:00 +0900
 tags: jekyll tag search start
+description: "지킬에서 태그 검색을 하는 방법" 
 ---
 연말을 맞아 새심. 귀찮았던 블로그를 다시 마음을 잡고 쓰려고 합니다
 
