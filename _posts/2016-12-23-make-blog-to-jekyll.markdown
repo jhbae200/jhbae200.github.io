@@ -195,7 +195,7 @@ permalink: /search
 
 현재는 검색이 빨라서 따로 로딩처리는 하지 않았으나 데이터가 많아져 검색에 시간이 걸리는 경우에는 로딩처리 로직을 구현하는게 좋겠습니다.
 
-[jeykll-home]: https://jekyllrb.com/
+[jekyll-home]: https://jekyllrb.com/
 [jekyll-docs]: http://jekyllrb.com/docs/home
 [jekyll-docs-kr]: https://jekyllrb-ko.github.io/docs/home/
 [materializecss]: http://materializecss.com/
