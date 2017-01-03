@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Jeykll로 블로그 제작하기"
+title:  "Jekyll로 블로그 제작하기"
 writer: "배진환"
 date:   2016-12-30 12:00:00 +0900
 tags: jekyll tag search start
