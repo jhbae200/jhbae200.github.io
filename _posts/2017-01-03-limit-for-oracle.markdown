@@ -66,6 +66,7 @@ ROWNUM을 사용하지 않고 쿼리문을 실행하여 자를 시엔
 
 java로 ojdbc6.jar을 사용하여 두 개의 속도 테스트를 해보겠습니다.  
 테스트 환경은
+
 ~~~~
 OS : Windows 7 Professional K 64bit
 CPU : Intel Code i5 3.20GHz
