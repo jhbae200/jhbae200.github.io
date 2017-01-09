@@ -8,7 +8,7 @@ layout: null
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for post in site.posts %}
   <url>
-    <loc>{% if site.url %}{{ site.url }}{% else %}https://jhbae200.github.io{% endif %}{{ site.baseurl }}{{ post.url }}</loc>
+    <loc>{{ site.url }}{{ site.baseurl }}{{ post.url }}</loc>
     {% if post.date %}
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
     {% endif %}
