@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about
+sitemap: yes
 ---
 
 1997-03-19 출생
