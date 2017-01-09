@@ -8,7 +8,7 @@ layout: null
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for post in site.posts %}
   <url>
-    <loc>{{ site.url }}{{ site.baseurl }}{{ post.url }}</loc>
+    <loc>{{ site.url | defualt: 'https://jhbae200.github.io'}}{{ site.baseurl }}{{ post.url }}</loc>
     {% if post.date %}
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
     {% endif %}
@@ -19,7 +19,7 @@ layout: null
   {% for page in site.pages %}
   {% if page.sitemap %}
   <url>
-    <loc>{{ site.url }}{{ site.baseurl }}{{ page.url }}</loc>
+    <loc>{{ site.url | defualt: 'https://jhbae200.github.io'}}{{ site.baseurl }}{{ page.url }}</loc>
     {% if page.date %}
     <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
     {% endif %}
@@ -30,7 +30,7 @@ layout: null
   {% endfor %}
   {% for tag in site.tags %}
   <url>
-    <loc>{{ site.url }}{{ site.baseurl }}/search?q={{ tag[0] }}</loc>
+    <loc>{{ site.url | defualt: 'https://jhbae200.github.io'}}{{ site.baseurl }}/search?q={{ tag[0] }}</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
