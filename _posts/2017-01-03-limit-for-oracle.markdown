@@ -23,8 +23,10 @@ _Ask Tom: On ROWNUM and Limiting Results - [Ask-Tom][ask-tom]_
 ROWNUM으로 top-n 쿼리는 쉽게 작성할 수 있습니다.
 
 {% highlight SQL %}
-SELECT * FROM EMP WHERE ROWNUM >= 5
+SELECT * FROM EMP WHERE ROWNUM <= 5
 {% endhighlight %}
+
+_2017-01-19 12:05 pm 수정했습니다._
 
 | EMPNO | ENAME  | JOB      | MGR  | HIREDATE            | SAL     | COMM    | DEPTNO |
 |-------|--------|----------|------|---------------------|---------|---------|--------|
