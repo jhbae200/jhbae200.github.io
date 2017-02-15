@@ -3,7 +3,7 @@ layout: post
 title:  "웹폰트 사용하기"
 writer: "배진환"
 date:   2017-02-15 17:24:00 +0900
-tags: node mysql express
+tags: js webfontloader font
 description: "웹폰트를 로딩하는 방법 중 css import방법이 아니라 webfontloader.js를 이용하여 로딩을 해보았습니다."
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "mybatis에서 null 처리"
 writer: "배진환"
 date:   2017-02-14 17:24:00 +0900
-tags: node mysql express
+tags: mybatis sql
 description: "mybatis에서 null 값을 처리하는 방법입니다."
 ---
 프로젝트를 진행하다가 mybatis에서 null값을 포함하여 insert할 때 nested exception is java.sql.SQLException: 부적합한 열 유형: 1111 오류가 난다.  
