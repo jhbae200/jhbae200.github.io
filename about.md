@@ -58,13 +58,13 @@ __담당업무__
 &#45; 소셜 로그인 추가  
 
 <div class="row">
-  <div class="col m4 s12">
+  <div class="col s4">
     <img class="materialboxed2" src="/assets/img/about/jellysketch-01.png" width="100%" attr="jellysketch-01.png"/>
   </div>
-  <div class="col m4 s12">
+  <div class="col s4">
     <img class="materialboxed2" src="/assets/img/about/jellysketch-03.png" width="100%" attr="jellysketch-03.png"/>
   </div>
-  <div class="col m4 s12">
+  <div class="col s4">
     <img class="materialboxed2" src="/assets/img/about/jellysketch-02.png" width="100%" attr="jellysketch-02.png"/>
   </div>
 </div>
@@ -91,7 +91,7 @@ __담당업무__
 &#45; 맴버 등록 전산화  
 
 <div class="row">
-  <div class="col m4 s12">
+  <div class="col s4">
     <img class="materialboxed2" src="/assets/img/about/peachtree-01.png" width="100%" attr="peachtree-01.png"/>
   </div>
 </div>
@@ -100,10 +100,10 @@ __담당업무__
 &#45; Angularjs, Python Flask, MySQL 사용  
 
 <div class="row">
-  <div class="col m4 s12">
+  <div class="col s4">
     <img class="materialboxed2" src="/assets/img/about/office-01.jpg" width="100%" attr="office-01.jpg"/>
   </div>
-  <div class="col m4 s12">
+  <div class="col s4">
     <img class="materialboxed2" src="/assets/img/about/office-02.jpg" width="100%" attr="office-02.jpg"/>
   </div>
 </div>
@@ -114,16 +114,16 @@ __담당업무__
 &#45; Python Flask, MySQL, JQuery, Foundation 6 사용  
 
 <div class="row">
-  <div class="col m3 s12">
+  <div class="col s3">
     <img class="materialboxed2" src="/assets/img/about/honesthouse-01.png" width="100%" attr="honesthouse-01.png"/>
   </div>
-  <div class="col m3 s12">
+  <div class="col s3">
     <img class="materialboxed2" src="/assets/img/about/honesthouse-02.png" width="100%" attr="honesthouse-02.png"/>
   </div>
-  <div class="col m3 s12">
+  <div class="col s3">
     <img class="materialboxed2" src="/assets/img/about/honesthouse-03.png" width="100%" attr="honesthouse-03.png"/>
   </div>
-  <div class="col m3 s12">
+  <div class="col s3">
     <img class="materialboxed2" src="/assets/img/about/honesthouse-04.png" width="100%" attr="honesthouse-04.png"/>
   </div>
 </div>
@@ -141,13 +141,13 @@ Framework: Foundation 5
 담당 파트: 학생코드와 학생정보로 회원가입 기능, 학사일정, 급식표 파싱, 쪽지 기능
 
 <div class="row">
-  <div class="col m4 s12">
+  <div class="col s4">
     <img class="materialboxed2" src="/assets/img/about/sunrinlife-01.png" width="100%" attr="sunrinlife-01.png"/>
   </div>
-  <div class="col m4 s12">
+  <div class="col s4">
     <img class="materialboxed2" src="/assets/img/about/sunrinlife-02.png" width="100%" attr="sunrinlife-02.png"/>
   </div>
-  <div class="col m4 s12">
+  <div class="col s4">
     <img class="materialboxed2" src="/assets/img/about/sunrinlife-03.png" width="100%" attr="sunrinlife-03.png"/>
   </div>
 </div>
@@ -167,16 +167,16 @@ Browser Support: Internet Explorer 10++, Chrome 52++, Firefox 48++, Safari 10++
 담당 파트: 게시판, 게시판 덧글 답글, 알림, 그 외 다른 팀원 서포트
 
 <div class="row">
-  <div class="col m3 s12">
+  <div class="col s3">
     <img class="materialboxed2" src="/assets/img/about/hyservice-01.png" width="100%" attr="hyservice-01.png"/>
   </div>
-  <div class="col m3 s12">
+  <div class="col s3">
     <img class="materialboxed2" src="/assets/img/about/hyservice-02.png" width="100%" attr="hyservice-02.png"/>
   </div>
-  <div class="col m3 s12">
+  <div class="col s3">
     <img class="materialboxed2" src="/assets/img/about/hyservice-03.png" width="100%" attr="hyservice-03.png"/>
   </div>
-  <div class="col m3 s12">
+  <div class="col s3">
     <img class="materialboxed2" src="/assets/img/about/hyservice-04.png" width="100%" attr="hyservice-04.png"/>
   </div>
 </div>
