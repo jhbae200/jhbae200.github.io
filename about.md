@@ -4,7 +4,9 @@ title: About Me
 permalink: /about
 sitemap: yes
 date: 2017-02-24 12:23:00 +0900
+update: 2017-02-24 6:34:00 +0900
 ---
+Last Update: {{ page.update | date: '%Y-%m-%d %H:%M KST' }}
 1. [프로필](#프로필)
 2. [경력사항](#경력사항)
   * [젤리스케치 (2015-03-25 ~ 2017-07-31)](#젤리스케치)
@@ -128,6 +130,8 @@ __담당업무__
   </div>
 </div>
 
+
+
 #### 프로젝트 ####
 
 ##### 선린라이프 #####
@@ -153,6 +157,22 @@ Framework: Foundation 5
 </div>
 
 학사일정과 급식표를 교육청 페이지에서 파싱하는 것에서 처음 파싱 작업을 했어서 데이터를 추출하고 정제하는데 시간을 많이 들었습니다. 하지만 이때 경험을 바탕으로 다른 페이지, 다른 언어에서 파싱 작업을 수월하게 할 수 있게 되었습니다.
+
+##### DragonRush #####
+2014-08-04 ~ 2014-08-14
+
+Engine: Unity 4.5.0
+
+<div class="row">
+  <div class="col s6">
+    <img class="materialboxed2" src="/assets/img/about/dragonrush-01.jpg" width="100%" attr="dragonrush-01.jpg"/>
+  </div>
+  <div class="col s6">
+    <img class="materialboxed2" src="/assets/img/about/dragonrush-02.jpg" width="100%" attr="dragonrush-02.jpg"/>
+  </div>
+</div>
+
+기획-디자인-개발로 팀을 이루어 미니게임을 제작하는 프로젝트를 경험할 수 있었습니다. 스테이지를 구성하는 데이터를 어떻게 만들지 고민을 하였는데 텍스트로 7줄로 한 행씩 읽어 게임 스테이지 데이터를 처리하였습니다.
 
 ##### 화니소프트 전자결재 #####
 2017-01-06 ~ 2017-02-27

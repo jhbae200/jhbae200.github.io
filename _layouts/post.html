@@ -8,7 +8,10 @@ layout: default
         <h3 class="title">
           {{ page.title }}
         </h3>
-        <p class="post-info">{{page.writer}} | {{ page.date | date: '%Y-%m-%d %H:%M KST' }}</p>
+        <p class="post-info">{{page.writer}}<br>
+          Created At {{ page.date | date: '%Y-%m-%d %H:%M KST' }}
+          {% if page.update != null %}<br> Last Modify {{ page.update | date: '%Y-%m-%d %H:%M KST'}}{% endif %}
+        </p>
           {{ content }}
         <ul class="post-tags">
           {% for tag in page.tags %}

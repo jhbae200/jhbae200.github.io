@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "oracle에서 rownum을 이용하는 방법들"
+title:  "oracle에서 rownum으로 페이징 처리"
 writer: "배진환"
 date:   2017-01-06 16:14:00 +0900
+update: 2017-02-27 18:33:24 +0900
 tags: oracle limit rownum
 description: "oracle에서 rownum을 이용하여 결과 개수 제한, 페이징 처리를 하고 페이징 처리 시 성능을 최적화할 수 있는 방법"
 ---
