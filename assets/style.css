@@ -203,3 +203,24 @@ figure.highlight {
 .highlight .gu { color: #75715e; } /* Generic.Subheading & Diff Unified/Comment? */
 .highlight .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
 .highlight .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
+
+.materialboxed2 {
+    display: block;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+    position: relative;
+    transition: opacity .4s
+}
+
+.materialboxed2:hover {
+    will-change: left, top, width, height
+}
+
+.materialboxed2:hover:not(.active) {
+    opacity: .8
+}
+
+.materialboxed2.active {
+    cursor: -webkit-zoom-out;
+    cursor: zoom-out
+}
