@@ -7,7 +7,7 @@ date: 2017-02-24 12:23:00 +0900
 update: 2017-02-24 6:34:00 +0900
 ---
 Last Update: {{ page.update | date: '%Y-%m-%d %H:%M KST' }}
-관련 이미지는 [https://drive.google.com/open?id=0BygbtABrAJ-8ZTl6bW5lUkYyaHM][https://drive.google.com/open?id=0BygbtABrAJ-8ZTl6bW5lUkYyaHM]에서도 볼 수 있습니다.
+관련 자료는 [https://drive.google.com/open?id=0BygbtABrAJ-8ZTl6bW5lUkYyaHM](https://drive.google.com/open?id=0BygbtABrAJ-8ZTl6bW5lUkYyaHM)에서도 볼 수 있습니다.
 1. [프로필](#프로필)
 2. [경력사항](#경력사항)
   * [젤리스케치 (2015-03-25 ~ 2017-07-31 4개월)](#젤리스케치)
@@ -217,6 +217,6 @@ __Polling 방식 알람__
 
 ##### 창업아이템경진대회 #####
 
-[사업계획서](https://drive.google.com/open?id=0BygbtABrAJ-8NjhqZ0laSFdMMms)
+[사업계획서.pdf](https://drive.google.com/open?id=0BygbtABrAJ-8NjhqZ0laSFdMMms)
 
 14년엔 창업에 관심이 많아서 창업에 관련한 책도 많이 찾아보고 읽어보곤 했습니다. 마침 교내창업아이템경진대회가 있어 '처음 프로그래밍을 접한 사람에게 복잡한 설치과정 필요 없이 다른 유저가 만든 튜토리얼을 보고 코딩, 즉시 실행해보게 하자'라는 주제로 사업계획서를 작성하였습니다. 처음 만나는 사업계획서는 정말 막막했지만, 인터넷에서, 학교에서 사업계획서 쓰는 방법을 찾아 많이 도움을 받았습니다. 제출하고 나니 속이 후련하고 정말 뿌듯했는데 얼마 뒤에 수상까지 했다고 해서 정말 놀랐고 덕분에 도전하는 것에 대하여 두려워 하지 말고 일단 도전해보자는 생각이 들었습니다.
