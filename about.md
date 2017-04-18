@@ -4,7 +4,7 @@ title: About Me
 permalink: /about
 sitemap: yes
 date: 2017-02-24 12:23:00 +0900
-update: 2017-02-24 6:34:00 +0900
+update: 2017-04-18 20:59:00 +0900
 ---
 Last Update: {{ page.update | date: '%Y-%m-%d %H:%M KST' }}  
 관련 자료는 [https://drive.google.com/open?id=0BygbtABrAJ-8ZTl6bW5lUkYyaHM](https://drive.google.com/open?id=0BygbtABrAJ-8ZTl6bW5lUkYyaHM)에서도 볼 수 있습니다.
