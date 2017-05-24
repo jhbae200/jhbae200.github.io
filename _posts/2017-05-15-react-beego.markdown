@@ -11,12 +11,11 @@ React는 재사용 가능한 사용자 인터페이스(UI)를 구축하기 위�
 ##### 특징 #####
 * MVC 프레임 워크가 아닌 V(View)에 집중한 라이브러리.
 * Virtual DOM 사용으로 최소한의 변경으로 높은 성능.
-* 서버 사이드 랜더링으로 브라우저 로딩 속도 향상과 SEO 최적화.
+* UI 분리로 코드 관리가 쉬워진다.
 
 ##### 단점 #####
-* 진입 장벽이 너무나도 높다. (처음 보는 jsx.. Virtual DOM은 또 뭐야? 서버 사이드 랜더링은 어떻게 하는 거지? 등..)
+* 진입 장벽이 너무나도 높다. (익숙하지 않은 jsx문법, Virtual DOM은 또 뭐야? 서버 사이드 랜더링은 어떻게 하는 거지? 등..)
 * 초기 설정이 복잡하다.
-* 실상 코드량은 적용 전과 비슷.
 
 #### Beego ####
 [Beego][Beego]
@@ -101,12 +100,14 @@ module.exports = {
 번들된 js는 src/static/js에 생성될 것이다.
 이 후 working directory에서 `webpack --watch`로 개발 중에는 번들이 자동화 되도록 한다.
 
+js 파일이 minify되어서 react 쪽에서 에러가 나서 당황할 수도 있다. 그냥 에러 메세지가 축약되서 나오는 것이니 걱정하지 말기를 바란다.
+
 #### Beego 초기설정 ####
 
 `go get github.com/astaxie/beego
 go get github.com/beego/bee`
 
-src 폴더 이동후 `bee new` 그리고 `bee run`
+src 폴더 이동후 `bee new [project-name]` 그리고 `bee run`
 
 끝났다.
 진짜다.
@@ -175,7 +176,7 @@ _index.tpl_
 </html>
 {% endhighlight %}
 
-http://localhost:8080/ 에 접속하면 React로 로딩된 Hello React 0 이 보일것이다.
+http://localhost:8080/ 에 접속하면 React로 로딩된 Hello React 0이 보이고 0이 1씩 늘어나는 것을 볼 수 있을 것이다.
 
 [React]: https://facebook.github.io/react/
 [Beego]: https://beego.me/

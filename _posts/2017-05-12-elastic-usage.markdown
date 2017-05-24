@@ -6,8 +6,6 @@ date:   2017-05-12 14:51:00 +0900
 tags: Elastic ElasticSearch
 ---
 검색 성능을 높이기 위해 Elastic을 도입하면서 공부한것을 내맘대로 정리해보려한다.
-
-#### Elastic ####
 > Elasticsearch is a distributed, RESTful search and analytics engine capable of solving a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data so you can discover the expected and uncover the unexpected.
 
 _Elasticsearch - [Elasticsearch][Elasticsearch]_
@@ -24,7 +22,6 @@ __노드__ 로 구성되며 __클러스터__ 로 그룹짓는다.
 * Shard: 색인을 여러조각으로 나누어 저장. 분산 작업으로 성능/처리량을 향상.
 * Replica: 샤드의 복제본. 서로 다른 샤드 복제본을 갖고 노드 장애시 복구 가능.
 
-설치시 주의점
 swapping 사용중지
 JVM의 힙의 일부가 디스크로 스와핑되면 Elastic의 성능에 안좋은 영향을 미치므로 swapping을 사용 중지하는 것이 좋다.
 
@@ -37,3 +34,5 @@ Kabana 사용하기
 
 결과를 적당히 조절하여(size와 from을 이용하여) 응답에 많은 시간이 걸리지 않도록 하기
 가능한 큰 쿼리 사용지양
+
+[Elasticsearch]: https://www.elastic.co/kr/products/elasticsearch
