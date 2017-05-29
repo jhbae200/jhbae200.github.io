@@ -8,9 +8,9 @@ description: "app engine에서 datastore 사용하기 및 php-gds 라이브러�
 ---
 
 app engine php 환경에서 datastore를 사용하려는데 번들되어있는 구글sdk를 쓰려니까 설계부터 복잡하기도 하고 내장되어있는 datastore sdk의 버전도 v1bete3이길래 다른 라이브러리를 찾다가 좀 더 쉽고 간단하게 만들 수 있는 [php-gds][php-gds]가 눈에 들어왔다.  
-php-gds와 silex를 이용해 간단한 api 서버를 구성해보고 발생하는 문제점을 해결하고 리펙토링(!)까지 해보도록 하겠다.
+php-gds와 silex를 이용해 간단한 api 서버를 구성해보고 발생하는 문제점을 해결해보도록 하겠다.
 
-#1.app engine php project 생성 및 구성
+#### app engine php project 생성 및 구성 ####
 먼저 앱 실행에 필요한 app.yaml, 의존성 관리를 위한 [composer][composer]를 구성하도록 한다.
 
 _/app.yaml_
@@ -63,7 +63,7 @@ _/composer.json_
   }
 }
 {% endhighlight %}
-#2.코드 작성
+#### 코드 작성 ####
 directory tree view
 ~~~~
 .
@@ -90,7 +90,7 @@ composer의 autoload기능으로 인해 src 디렉토리의 php파일 중에서 
 src/controller/ApiController.php 컨트롤러 마운트를 하고 web/index.php에서 app.php, controllers.php를 require 한다.
 자세한 코드는 [GdsExample][GdsExample] 깃허브를 참고하기 바란다.
 
-## DataStore.php
+##### DataStore.php #####
 {% highlight php %}
 <?php
 
@@ -185,7 +185,8 @@ isRead값이 true로 바뀐 것을 볼 수 있다. 이 중 update가 되지않�
 
 isRead를 제외한 모든 데이터가 string으로 변경되어 있다.
 
-해결을 위해 schema를 정의해준다.
+해결을 위해 schema를 정의해준다.  
+원래 datastore에는 schema가 없지만 이 php-gds라이브러리에서 결과를 가져올 때 schema가 없으면 default로 string으로 가져오도록 되어있어서 schema가 필요하다.
 
 _datamodel/DataStore.php_
 {% highlight php %}
@@ -204,7 +205,6 @@ class DataStore
 }
 {% endhighlight %}
 
-store를 생성할때 `$store = $this->getStore($this->getNotificationSchema());`으로 생성하여 스키마를 정의해준다.  
 다시 `GET /api/notification`을 호출하여 isRead값을 업데이트 해도 데이터 타입이 변경되지 않는 것을 확인할 수 있다.
 
 <div class="row">
