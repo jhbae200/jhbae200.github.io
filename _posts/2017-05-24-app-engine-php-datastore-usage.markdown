@@ -216,3 +216,4 @@ class DataStore
 
 [php-gds]: https://github.com/tomwalder/php-gds
 [GdsExample]: https://github.com/jhbae200/GdsExample
+[composer]: https://getcomposer.org/
