@@ -7,7 +7,7 @@ tags: appengine php php-gds
 description: "app engine에서 datastore 사용하기 및 php-gds 라이브러리 사용시 select 후 update를 하면 type이 string으로 변하는 문제 해결"
 ---
 
-app engine php 환경에서 datastore를 사용하려는데 번들되어있는 구글sdk를 쓰려니까 설계부터 복잡하기도 하고 내장되어있는 datastore sdk의 버전도 v1bete3이길래 다른 라이브러리를 찾다가 좀 더 쉽고 간단하게 만들 수 있는 [php-gds][php-gds]가 눈에 들어왔다.  
+app engine php 환경에서 datastore를 사용하려는데 번들 되어있는 구글 sdk를 쓰려니까 설계부터 복잡하기도 하고 내장되어있는 datastore sdk의 버전도 v1beta3 이길래 다른 라이브러리를 찾다가 좀 더 쉽고 간단하게 만들 수 있는 [php-gds][php-gds]가 눈에 들어왔다.  
 php-gds와 silex를 이용해 간단한 api 서버를 구성해보고 발생하는 문제점을 해결해보도록 하겠다.
 
 #### app engine php project 생성 및 구성 ####
@@ -85,7 +85,7 @@ directory tree view
     └── index.php
 ~~~~
 
-composer의 autoload기능으로 인해 src 디렉토리의 php파일 중에서 namespace가 Jhbae\\GdsExample\\ 인 파일들은 require vendor/autoload.php로 자동적으로 로드 될 것이다.
+composer의 autoload기능으로 인해 src 디렉토리의 php파일 중에서 namespace가 Jhbae\\GdsExample\\ 인 파일들은 require vendor/autoload.php로 자동으로 로드 될 것이다.
 
 src/controller/ApiController.php 컨트롤러 마운트를 하고 web/index.php에서 app.php, controllers.php를 require 한다.
 자세한 코드는 [GdsExample][GdsExample] 깃허브를 참고하기 바란다.
@@ -161,10 +161,10 @@ class DataStore
 }
 {% endhighlight %}
 
-위의 코드가 좋은 코드는 아니다. 단지 테스트를 위해 급하게 만들었을 뿐. 나중에 리펙토링하도록 하자.  
+위의 코드가 좋은 코드는 아니다. 단지 테스트를 위해 급하게 만들었을 뿐. 나중에 리팩토링하도록 하자.  
 datastore에서 핵심은 데이터를 select하고 데이터들의 isRead값을 true로 변경하고 반영한다는 것이다.
-Notification에 몇몇 데이터를 밀어넣고 Notification을 가져오면 것보기엔 정상적으로 가져온 것처럼 보이나
-datastore를 보면 각각 칼럼들의 데이터 타입이 string(!!)으로 변경되어있다. 단순히 isRead를 true로 변경했을 뿐인데 다른 칼럼들의 데이터 타입이 string으로 변경되어 버리면 다른코드에서 문제를 일으킬 가능성이나 index에 안좋은 영향을 미칠 수 있다.
+Notification에 몇몇 데이터를 밀어 넣고 Notification을 가져오면 겉보기엔 정상적으로 가져온 것처럼 보이나
+datastore를 보면 각각 칼럼들의 데이터 타입이 string(!!)으로 변경되어있다. 단순히 isRead를 true로 변경했을 뿐인데 다른 칼럼들의 데이터 타입이 string으로 변경되어 버리면 다른 코드에서 문제를 일으킬 가능성이나 index에 안 좋은 영향을 미칠 수 있다.
 
 <div class="row">
   <div class="col s12">
@@ -172,7 +172,7 @@ datastore를 보면 각각 칼럼들의 데이터 타입이 string(!!)으로 변
   </div>
 </div>
 
-isRead값이 true로 바뀐 것을 볼 수 있다. 이 중 update가 되지않은 엔티티 하나와 update된 엔티티를 비교해보았다.
+isRead값이 true로 바뀐 것을 볼 수 있다. 이 중 update가 되지 않은 엔티티 하나와 update된 엔티티를 비교해보았다.
 
 <div class="row">
   <div class="col s6">
@@ -186,7 +186,7 @@ isRead값이 true로 바뀐 것을 볼 수 있다. 이 중 update가 되지않�
 isRead를 제외한 모든 데이터가 string으로 변경되어 있다.
 
 해결을 위해 schema를 정의해준다.  
-원래 datastore에는 schema가 없지만 이 php-gds라이브러리에서 결과를 가져올 때 schema가 없으면 default로 string으로 가져오도록 되어있어서 schema가 필요하다.
+원래 datastore에는 schema가 없지만, 이 php-gds라이브러리에서 결과를 가져올 때 schema가 없으면 default로 string으로 가져오게 되어있어서 schema가 필요하다.
 
 _datamodel/DataStore.php_
 {% highlight php %}
@@ -205,7 +205,7 @@ class DataStore
 }
 {% endhighlight %}
 
-다시 `GET /api/notification`을 호출하여 isRead값을 업데이트 해도 데이터 타입이 변경되지 않는 것을 확인할 수 있다.
+다시 `GET /api/notification`을 호출하여 isRead값을 업데이트해도 데이터 타입이 변경되지 않는 것을 확인할 수 있다.
 
 <div class="row">
   <div class="col s12">
