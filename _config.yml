@@ -16,7 +16,6 @@
 title: Jinhwan Blog
 email: jhbae200@gmail.com
 description: 개발 그리고 잡담
-source: app
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jhbae200.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  jhbae200

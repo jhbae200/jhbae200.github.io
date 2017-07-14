@@ -1,7 +1,7 @@
 ---
 layout: about
 title: About Me
-permalink: /src/my-about
+permalink: /src/my-about/
 sitemap: yes
 date: 2017-02-24 12:23:00 +0900
 update: 2017-04-18 20:59:00 +0900
