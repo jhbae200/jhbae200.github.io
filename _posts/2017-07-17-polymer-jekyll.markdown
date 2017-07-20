@@ -2,7 +2,8 @@
 layout: post
 title:  "Polymer를 사용하여 github page 꾸미기"
 writer: "배진환"
-date:   2017-07-17 17:40:00 +0900
+date: 2017-07-17 17:40:00 +0900
+update: 2017-07-17 17:18:00 +0900
 tags: Polymer Jekyll
 ---
 최근에 [Angular][Angular]와 [React][React]의 사용 하면서 이전의 [jQuery][jQuery]와 그 외 다수의 플러그인을 사용할 때보다 많이 빠른 것을 느끼면서 지금 사용하고 있는 이 블로그도 빠른 웹을 위해 변경할 필요가 있다고 느껴서 Angular와 React는 이미 사용해봤으므로 [Polymer][Polymer]를 사용하여 블로그를 변경해보았습니다. 간단한 소개와  Polymer를 [Github Page][Github-Page]에 적용 시 문제점 등을 공유해보려 합니다.
@@ -19,7 +20,7 @@ tags: Polymer Jekyll
 필요한 Component가 있으면 [WebComponent][WebComponent]에서 검색 후 [bower][bower] install로 설치해서 사용하면 됩니다.
 
 # Github Page에서 Polymer
-Github Page의 특정상 루트 도메인 아래의 콘텐츠들을 index.html로 연결할 수는 없으니 조금 다르게 생각을 해야 했습니다.
+Github Page의 특정상 일반적인 Polymer 개발과는 조금 다르게 생각을 해야 했습니다.
 
 * Polymer의 기능으로 route를 변경했을 때 location이 변경된 상태(ex: https://jhbae200.github.io/home)에서 새로고침 시 404페이지로 가버리는 것
 * markdown으로 작성한 포스트의 연결
@@ -469,64 +470,328 @@ github.io를 그대로 사용한다면 github.io가 h2를 지원해주길 ~~우�
 참고하실 사이트입니다.  
 [https://blog.cloudflare.com/secure-and-fast-github-pages-with-cloudflare/][Github-Page-CloudFlare]
 
-## `polymer build`작업 후 나오는 index.html에서 jekyll parsing 오류
+## `polymer build`작업 후 jekyll parsing 오류
 
-polymer로 다 작성 후 `polymer bulid`로 빌드하고 빌드된 파일을 기반으로 app을 실행해보니 polyfill에서 `{{'{%'}}` 또는 `{{'{{'}}`을 포함하고 있어서 그런지 Jekyll에서 parsing error가 발생합니다. glup으로 수동 빌드를 만들어 사용하면 될 것 같았는데 glup을 해당 문제를 해결하기 위해 찾아보다 발견한 것이고 사용해본 적이 없으므로 그냥 손으로 하기로 했습니다. 해봤자 5개의 파일만 수정하면 될 것 같거든요, glup이 익숙해지면 한번 고민해보도록 (...) 하겠습니다.
+polymer로 다 작성 후 `polymer bulid`로 빌드하고 빌드된 파일을 기반으로 app을 실행해보니 polyfill에서 `{{'{%'}}` 또는 `{{'{{'}}`을 포함하고 있어서 그런지 Jekyll에서 parsing error가 발생합니다. glup으로 수동 빌드를 만들어 사용하였습니다.
 
-polymer.json 설정이 조금 필요합니다.
+가능한 polymer cli의 build를 따라가고 싶었으므로 polymer cli의 소스를 이용했습니다.  
+먼저 상단의 jekyll의 머리말을 뗴어내고 minify, bundling, compile등의 모든 작업을 거친 뒤 다시 jekyll의 머리말을 붙인다음
+jekyll에서 parsing 오류가 나지 않도록 파일들을 검사하여 <html> 앞에 {{'{'}}% raw %}를 붙이고 이후 만나는 {{'{'}}% raw %}앞에  {{'{'}}% endraw %}를 붙였습니다.
 
-: _polymer.json_
-{% highlight JSON %}
-{
-  "entrypoint": "index.html",
-  "shell": "src/my-app/index.html",
-  "fragments": [
-    "src/my-home/index.html",
-    "src/my-post/index.html",
-    "src/my-view404.html",
-    "src/my-network-warning.html"
-  ],
-  "sources": [
-    "_layouts/about.html",
-    "src/**/*",
-    "bower.json"
-  ],
-  "extraDependencies": [
-    "manifest.json",
-    "bower_components/webcomponentsjs/*.js"
-  ],
-  "lint": {
-    "rules": [
-      "polymer-2"
-    ]
-  },
-  "builds": [
-    {
-      "name": "app",
-      "bundle": true,
-      "html": {
-        "minify": true
-      },
-      "css": {
-        "minify": true
-      },
-      "js": {
-        "minify": true,
-        "compile": true
-      },
-      "addServiceWorker": true
+: _lib/jekyllSplitter.js_
+
+{% highlight js %}
+/**
+ * Created by Jinhwan on 2017-07-19.
+ */
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __asyncValues = (this && this.__asyncIterator) || function (o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator];
+    return m ? m.call(o) : typeof __values === "function" ? __values(o) : o[Symbol.iterator]();
+};
+var __await = (this && this.__await) || function (v) { return this instanceof __await ? (this.v = v, this) : new __await(v); }
+var __asyncGenerator = (this && this.__asyncGenerator) || function (thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);  }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+
+const streams_1 = require('polymer-build/lib/streams');
+const osPath = require("path");
+
+class JekyllSplitter {
+    constructor() {
+        this._jekyllTagMap = new Map();
     }
-  ]
+
+    split() {
+        return new JekyllSplit(this);
+    }
+
+    rejoin() {
+        return new JekyllJoin(this);
+    }
+
+
+    getJekyllTag(key) {
+        return this._jekyllTagMap.get(key);
+    }
+
+    setJekyllTag(key, value) {
+        this._jekyllTagMap.set(key, value);
+    }
 }
+exports.JekyllSplitter = JekyllSplitter;
+
+class JekyllSplit extends streams_1.AsyncTransformStream {
+    constructor(splitter) {
+        super({ objectMode: true });
+        this._state = splitter;
+    }
+    _transformIter(files) {
+        return __asyncGenerator(this, arguments, function* _transformIter_1() {
+            try {
+                for (var files_1 = __asyncValues(files), files_1_1; files_1_1 = yield __await(files_1.next()), !files_1_1.done;) {
+                    const file = yield __await(files_1_1.value);
+                    const filePath = osPath.normalize(file.path);
+                    if (!(file.contents && filePath.endsWith('.html'))) {
+                        yield file;
+                        continue;
+                    }
+                    let contents = yield __await(streams_1.getFileContents(file));
+                    const jekyllTag = getJekyllTag(contents);
+                    this._state.setJekyllTag(file.path, jekyllTag);
+                    if (jekyllTag) {
+                        contents = contents.substring(jekyllTag.length);
+                    }
+                    file.contents = new Buffer(contents);
+
+                    yield file;
+                }
+            }
+            catch (e_1_1) { e_1 = { error: e_1_1 }; }
+            finally {
+                try {
+                    if (files_1_1 && !files_1_1.done && (_a = files_1.return)) yield __await(_a.call(files_1));
+                }
+                finally { if (e_1) throw e_1.error; }
+            }
+            var e_1, _a;
+        });
+    }
+}
+
+class JekyllJoin extends streams_1.AsyncTransformStream {
+    constructor(splitter) {
+        super({ objectMode: true });
+        this._state = splitter;
+    }
+    _transformIter(files) {
+        return __asyncGenerator(this, arguments, function* _transformIter_1() {
+            try {
+                for (var files_1 = __asyncValues(files), files_1_1; files_1_1 = yield __await(files_1.next()), !files_1_1.done;) {
+                    const file = yield __await(files_1_1.value);
+                    const filePath = osPath.normalize(file.path);
+                    if (!(file.contents && filePath.endsWith('.html'))) {
+                        yield file;
+                        continue;
+                    }
+                    let contents = yield __await(streams_1.getFileContents(file));
+                    const jekyllTag = this._state.getJekyllTag(file.path);
+                    if (jekyllTag) {
+                        contents = jekyllTag + '\n' + contents;
+                        file.contents = new Buffer(contents);
+                    }
+                    yield file;
+                }
+            }
+            catch (e_1_1) { e_1 = { error: e_1_1 }; }
+            finally {
+                try {
+                    if (files_1_1 && !files_1_1.done && (_a = files_1.return)) yield __await(_a.call(files_1));
+                }
+                finally { if (e_1) throw e_1.error; }
+            }
+            var e_1, _a;
+        });
+    }
+}
+
+const jekyllTagRegex = /^---(\n|\r|\n\r|\r\n)(\w*\:.*.(\n|\r|\n\r|\r\n))*---/;
+exports.jekyllTagRegex = jekyllTagRegex;
+
+function getJekyllTag(html) {
+    const jekyllTag = html.match(jekyllTagRegex);
+    if (jekyllTag) {
+        return jekyllTag[0];
+    }
+    return null;
+}
+
+exports.getJekyllTag = getJekyllTag;
 {% endhighlight %}
 
-_layouts/about.html도 Component로 bundling이 필요하므로 sources에 추가해줬습니다.
+: _lib/appendRaw.js_
+{% highlight js %}
+/**
+ * Created by Jinhwan on 2017-07-19.
+ */
 
-`polymer build` 후 build directory기준 파일명입니다.
+const stream_1 = require("stream");
 
-_src/my-app/index.html_
+const bundleRegex = /<html>/;
+const rawRegex = /{{'{'}}%( )?raw( )?%}/;
+const jekyllTagRegex = require("./jekyllSplitter").jekyllTagRegex;
 
-첫 `<script>` 태그 앞에 `{{'{'}}% raw %}`를 붙여주시고 그 뒤로 사용한 `{{'{'}}% raw %}`를 찾아 앞에 `{{'{'}}% endraw %}`를 붙여주시면 앱은 작동합니다.
+class AppendRawTransform extends stream_1.Transform {
+    constructor(optimizerName, optimizer, optimizerOptions) {
+        super({ objectMode: true });
+        this.optimizer = optimizer;
+        this.optimizerName = optimizerName;
+        this.optimizerOptions = optimizerOptions || {};
+    }
+    _transform(file, _encoding, callback) {
+        if (file.contents) {
+            try {
+                let contents = file.contents.toString();
+                if (contents.search(jekyllTagRegex) === -1 || contents.search(rawRegex) === -1) {
+                    callback(null, file);
+                    return;
+                }
+                contents = contents.replace(rawRegex, '{{'{'}}% endraw %}{{'{'}}% raw %}').replace(bundleRegex, '{{'{'}}% raw %}<html>');
+                file.contents = new Buffer(contents);
+            }
+            catch (error) {
+                logger.warn(`${this.optimizerName}: Unable to optimize ${file.path}`, { err: error.message || error });
+            }
+        }
+        callback(null, file);
+    }
+}
+exports.AppendRawTransform = AppendRawTransform;
+{% endhighlight %}
+
+: _src/guipfile.js_
+
+{% highlight js %}
+/**
+ * Created by Jinhwan on 2017-07-18.
+ */
+'use strict';
+
+const del = require('del');
+const gulp = require('gulp');
+const mergeStream = require('merge-stream');
+const polymerBuild = require('polymer-build');
+
+const swPrecacheConfig = require('./sw-precache-config.js');
+const polymerJson = require('./polymer.json');
+const options = polymerJson.builds[0];
+const optimizeOptions = {
+    css: options.css,
+    js: options.js,
+    html: options.html
+};
+const polymerProject = new polymerBuild.PolymerProject(polymerJson);
+const buildDirectory = 'build';
+const getOptimizeStreams = require('../lib/optimize-stream').getOptimizeStreams;
+const JekyllSplitter = require('../lib/jekyllSplitter').JekyllSplitter;
+const AppendRawTransform = require("../lib/appendRaw").AppendRawTransform;
+
+/**
+ * Waits for the given ReadableStream
+ */
+function waitFor(stream) {
+    return new Promise((resolve, reject) => {
+        stream.on('end', resolve);
+        stream.on('error', reject);
+    });
+}
+
+function pipeStreams(streams) {
+    return Array.prototype.concat.apply([], streams)
+        .reduce((a, b) => {
+            return a.pipe(b);
+        });
+}
+
+function build() {
+    return new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars
+
+        // Okay, so first thing we do is clear the build directory
+        console.log(`Deleting ${buildDirectory} directory...`);
+        del([buildDirectory])
+            .then(() => {
+                const stream = gulp.src(options.passingPattern, {base: '.'}).pipe(gulp.dest(buildDirectory));
+                return waitFor(stream);
+            })
+            .then(() => {
+                // Let's start by getting your source files. These are all the files
+                // in your `src/` directory, or those that match your polymer.json
+                // "sources"  property if you provided one.
+                const sourcesStream = polymerBuild.forkStream(polymerProject.sources());
+                const depsStream = polymerBuild.forkStream(polymerProject.dependencies());
+                const htmlSplitter = new polymerBuild.HtmlSplitter();
+                const jekyllSplitter = new JekyllSplitter();
+
+                let buildStream = pipeStreams([
+                    mergeStream(sourcesStream, depsStream),
+                    jekyllSplitter.split(),
+                    htmlSplitter.split(),
+                    getOptimizeStreams(optimizeOptions),
+                    htmlSplitter.rejoin(),
+                ])
+                    .once('data', () => {
+                        console.log('building...');
+                    });
+
+
+                const compiledToES5 = !!(optimizeOptions.js && optimizeOptions.js.compile);
+                if (compiledToES5) {
+                    buildStream = buildStream.pipe(polymerProject.addBabelHelpersInEntrypoint())
+                        .pipe(polymerProject.addCustomElementsEs5Adapter());
+                }
+
+                const bundled = !!(options.bundle);
+                if (bundled && typeof options.bundle === 'object') {
+                    buildStream = buildStream.pipe(polymerProject.bundler(options.bundle));
+                } else if (bundled) {
+                    buildStream = buildStream.pipe(polymerProject.bundler());
+                }
+
+                if (options.addPushManifest) {
+                    buildStream = buildStream.pipe(polymerProject.addPushManifest());
+                }
+
+                buildStream = buildStream.pipe(jekyllSplitter.rejoin());
+                buildStream = buildStream.pipe(new AppendRawTransform());
+
+                buildStream = buildStream.pipe(gulp.dest(buildDirectory));
+                return waitFor(buildStream);
+            })
+            .then(() => {
+                if (options.addServiceWorker) {
+                    // Okay, now let's generate the Service Worker
+                    console.log('Generating the Service Worker...');
+                    return polymerBuild.addServiceWorker({
+                        project: polymerProject,
+                        buildRoot: buildDirectory,
+                        bundled: !!(options.bundle),
+                        //TODO: 2017-07-18 polymer.json 따라가지 않음.
+                        swPrecacheConfig: swPrecacheConfig
+                    });
+                }
+            })
+            .then(() => {
+                // You did it!
+                console.log('Build complete!');
+                resolve();
+            });
+    });
+}
+
+gulp.task('build', build);
+{% endhighlight %}
+
+이후 package.json의 script에 build항목을 추가했습니다.
+`"build": "gulp build --gulpfile src/gulpfile.js"`
+
 
 ## SEO 적용
 
