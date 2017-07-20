@@ -4,7 +4,7 @@ permalink: /tags
 
 {
 {% for tag in site.tags %}
-"{{tag[0]}}" : [
+"{{tag[0] | downcase}}" : [
 {% for post in tag[1] %}
 {
 "title" : "{{ post.title | escape }}",
@@ -12,7 +12,7 @@ permalink: /tags
 "content" : "{{ post.content | strip_html | truncatewords: 80, "..." | url_encode }}",
 "url" : "{{ post.url }}",
 "writer" : "{{ post.writer | escape }}",
-"tags" : ["{{ post.tags | join: '","' }}"]
+"tags" : ["{{ post.tags | join: '","' | downcase}}"]
 }
 {% if forloop.last != true %},{% endif %}
 {% endfor %}

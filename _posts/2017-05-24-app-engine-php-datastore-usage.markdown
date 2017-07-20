@@ -168,7 +168,7 @@ datastore를 보면 각각 칼럼들의 데이터 타입이 string(!!)으로 변
 
 <div class="row">
   <div class="col s12">
-    <img class="materialboxed2" src="/assets/img/post/20170524-1/1.png" width="100%" attr="1.png"/>
+    <img class="materialboxed2" src="/images/post/20170524-1/1.png" width="100%" attr="1.png"/>
   </div>
 </div>
 
@@ -176,10 +176,10 @@ isRead값이 true로 바뀐 것을 볼 수 있다. 이 중 update가 되지 않�
 
 <div class="row">
   <div class="col s6">
-    <img class="materialboxed2" src="/assets/img/post/20170524-1/2.png" width="100%" attr="2.png"/>
+    <img class="materialboxed2" src="/images/post/20170524-1/2.png" width="100%" attr="2.png"/>
   </div>
   <div class="col s6">
-    <img class="materialboxed2" src="/assets/img/post/20170524-1/3.png" width="100%" attr="3.png"/>
+    <img class="materialboxed2" src="/images/post/20170524-1/3.png" width="100%" attr="3.png"/>
   </div>
 </div>
 
@@ -209,7 +209,7 @@ class DataStore
 
 <div class="row">
   <div class="col s12">
-    <img class="materialboxed2" src="/assets/img/post/20170524-1/4.png" width="100%" attr="4.png"/>
+    <img class="materialboxed2" src="/images/post/20170524-1/4.png" width="100%" attr="4.png"/>
   </div>
 </div>
 

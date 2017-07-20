@@ -1,7 +1,7 @@
 ---
 layout: about
 title: About Me
-permalink: /src/my-about/
+permalink: /src/my-about
 sitemap: yes
 date: 2017-02-24 12:23:00 +0900
 update: 2017-04-18 20:59:00 +0900
@@ -20,7 +20,7 @@ update: 2017-04-18 20:59:00 +0900
   * [창업아이템경진대회](#창업아이템경진대회)
 
 #### 프로필 ####
-![프로필이미지](/assets/img/about/profile.png){:width="120px"}  
+![프로필이미지](/images/about/profile.png){:width="120px"}  
 1997년 03월 19일 출생
 
 ##### 학력 #####
@@ -64,13 +64,13 @@ __담당업무__
 
 <div class="row">
   <div class="col s4">
-    <img class="materialboxed2" src="/assets/img/about/jellysketch-01.png" width="100%" attr="jellysketch-01.png"/>
+    <img class="materialboxed2" src="/images/about/jellysketch-01.png" width="100%" attr="jellysketch-01.png"/>
   </div>
   <div class="col s4">
-    <img class="materialboxed2" src="/assets/img/about/jellysketch-03.png" width="100%" attr="jellysketch-03.png"/>
+    <img class="materialboxed2" src="/images/about/jellysketch-03.png" width="100%" attr="jellysketch-03.png"/>
   </div>
   <div class="col s4">
-    <img class="materialboxed2" src="/assets/img/about/jellysketch-02.png" width="100%" attr="jellysketch-02.png"/>
+    <img class="materialboxed2" src="/images/about/jellysketch-02.png" width="100%" attr="jellysketch-02.png"/>
   </div>
 </div>
 
@@ -97,7 +97,7 @@ __담당업무__
 
 <div class="row">
   <div class="col s4">
-    <img class="materialboxed2" src="/assets/img/about/peachtree-01.png" width="100%" attr="peachtree-01.png"/>
+    <img class="materialboxed2" src="/images/about/peachtree-01.png" width="100%" attr="peachtree-01.png"/>
   </div>
 </div>
 
@@ -106,10 +106,10 @@ __담당업무__
 
 <div class="row">
   <div class="col s4">
-    <img class="materialboxed2" src="/assets/img/about/office-01.jpg" width="100%" attr="office-01.jpg"/>
+    <img class="materialboxed2" src="/images/about/office-01.jpg" width="100%" attr="office-01.jpg"/>
   </div>
   <div class="col s4">
-    <img class="materialboxed2" src="/assets/img/about/office-02.jpg" width="100%" attr="office-02.jpg"/>
+    <img class="materialboxed2" src="/images/about/office-02.jpg" width="100%" attr="office-02.jpg"/>
   </div>
 </div>
 
@@ -120,16 +120,16 @@ __담당업무__
 
 <div class="row">
   <div class="col s3">
-    <img class="materialboxed2" src="/assets/img/about/honesthouse-01.png" width="100%" attr="honesthouse-01.png"/>
+    <img class="materialboxed2" src="/images/about/honesthouse-01.png" width="100%" attr="honesthouse-01.png"/>
   </div>
   <div class="col s3">
-    <img class="materialboxed2" src="/assets/img/about/honesthouse-02.png" width="100%" attr="honesthouse-02.png"/>
+    <img class="materialboxed2" src="/images/about/honesthouse-02.png" width="100%" attr="honesthouse-02.png"/>
   </div>
   <div class="col s3">
-    <img class="materialboxed2" src="/assets/img/about/honesthouse-03.png" width="100%" attr="honesthouse-03.png"/>
+    <img class="materialboxed2" src="/images/about/honesthouse-03.png" width="100%" attr="honesthouse-03.png"/>
   </div>
   <div class="col s3">
-    <img class="materialboxed2" src="/assets/img/about/honesthouse-04.png" width="100%" attr="honesthouse-04.png"/>
+    <img class="materialboxed2" src="/images/about/honesthouse-04.png" width="100%" attr="honesthouse-04.png"/>
   </div>
 </div>
 
@@ -150,10 +150,10 @@ Engine: Unity 4.5.0
 
 <div class="row">
   <div class="col s6">
-    <img class="materialboxed2" src="/assets/img/about/dragonrush-01.jpg" width="100%" attr="dragonrush-01.jpg"/>
+    <img class="materialboxed2" src="/images/about/dragonrush-01.jpg" width="100%" attr="dragonrush-01.jpg"/>
   </div>
   <div class="col s6">
-    <img class="materialboxed2" src="/assets/img/about/dragonrush-02.jpg" width="100%" attr="dragonrush-02.jpg"/>
+    <img class="materialboxed2" src="/images/about/dragonrush-02.jpg" width="100%" attr="dragonrush-02.jpg"/>
   </div>
 </div>
 
@@ -172,13 +172,13 @@ Framework: Foundation 5
 
 <div class="row">
   <div class="col s4">
-    <img class="materialboxed2" src="/assets/img/about/sunrinlife-01.png" width="100%" attr="sunrinlife-01.png"/>
+    <img class="materialboxed2" src="/images/about/sunrinlife-01.png" width="100%" attr="sunrinlife-01.png"/>
   </div>
   <div class="col s4">
-    <img class="materialboxed2" src="/assets/img/about/sunrinlife-02.png" width="100%" attr="sunrinlife-02.png"/>
+    <img class="materialboxed2" src="/images/about/sunrinlife-02.png" width="100%" attr="sunrinlife-02.png"/>
   </div>
   <div class="col s4">
-    <img class="materialboxed2" src="/assets/img/about/sunrinlife-03.png" width="100%" attr="sunrinlife-03.png"/>
+    <img class="materialboxed2" src="/images/about/sunrinlife-03.png" width="100%" attr="sunrinlife-03.png"/>
   </div>
 </div>
 
@@ -200,16 +200,16 @@ Browser Support: Internet Explorer 10++, Chrome 52++, Firefox 48++, Safari 10++
 
 <div class="row">
   <div class="col s3">
-    <img class="materialboxed2" src="/assets/img/about/hyservice-01.png" width="100%" attr="hyservice-01.png"/>
+    <img class="materialboxed2" src="/images/about/hyservice-01.png" width="100%" attr="hyservice-01.png"/>
   </div>
   <div class="col s3">
-    <img class="materialboxed2" src="/assets/img/about/hyservice-02.png" width="100%" attr="hyservice-02.png"/>
+    <img class="materialboxed2" src="/images/about/hyservice-02.png" width="100%" attr="hyservice-02.png"/>
   </div>
   <div class="col s3">
-    <img class="materialboxed2" src="/assets/img/about/hyservice-03.png" width="100%" attr="hyservice-03.png"/>
+    <img class="materialboxed2" src="/images/about/hyservice-03.png" width="100%" attr="hyservice-03.png"/>
   </div>
   <div class="col s3">
-    <img class="materialboxed2" src="/assets/img/about/hyservice-04.png" width="100%" attr="hyservice-04.png"/>
+    <img class="materialboxed2" src="/images/about/hyservice-04.png" width="100%" attr="hyservice-04.png"/>
   </div>
 </div>
 
