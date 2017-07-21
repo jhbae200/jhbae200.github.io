@@ -1,7 +1,9 @@
+---
+---
 {
-  "name": "Jinhwan Blog",
-  "short_name": "Jinhwan Blog",
-  "start_url": "/index.html",
+  "name": "{{ site.title }}",
+  "short_name": "{{ site.title }}",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#3f51b5",
   "background_color": "#3f51b5",
