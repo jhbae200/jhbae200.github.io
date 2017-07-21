@@ -2,7 +2,7 @@
 ---
 {
   "name": "{{ site.title }}",
-  "short_name": "{{ site.title }}",
+  "short_name": "blog",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#3f51b5",
