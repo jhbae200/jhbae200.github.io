@@ -27,11 +27,4 @@
   </url>
   {% endif %}
   {% endfor %}
-  {% for tag in site.tags %}
-  <url>
-    <loc>{{ site.url }}{{ site.baseurl }}/search?q={{ tag[0] }}</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  {% endfor %}
 </urlset>
