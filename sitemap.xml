@@ -37,4 +37,17 @@
   </url>
   {% endif %}
   {% endfor %}
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}/#!/about</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="ko"
+      href="{{ site.url }}{{ site.baseurl }}/#!/about"
+      />
+    {% if page.date %}
+    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+    {% endif %}
+    <changefreq>{{ sitemap.freq | default: 'monthly' }}</changefreq>
+    <priority>{{ sitemap.priority | default: '1.0' }}</priority>
+  </url>
 </urlset>
