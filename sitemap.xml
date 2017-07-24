@@ -8,6 +8,11 @@
   {% for post in site.posts %}
   <url>
     <loc>{{ site.url }}{{ site.baseurl }}/#!{{ post.url }}</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="ko"
+      href="{{ site.url }}{{ site.baseurl }}/#!{{ post.url }}"
+      />
     {% if post.date %}
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
     {% endif %}
@@ -19,6 +24,11 @@
   {% if page.sitemap %}
   <url>
     <loc>{{ site.url }}{{ site.baseurl }}/#!{{ page.url }}</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="ko"
+      href="{{ site.url }}{{ site.baseurl }}/#!{{ page.url }}"
+      />
     {% if page.date %}
     <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
     {% endif %}
