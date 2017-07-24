@@ -45,7 +45,7 @@ __2016.08.31 ~ 2017.02.23 (6개월)__ 한국아이티인재개발원 빅데이�
 
 ##### 사용기술 #####
 어느정도 능숙하게 다룰 수 있음  
-Java, Spring Framework, Mybatis, Python 2.7, Flask, Go, Node.js, Express, Shell script, HTML5, CSS3, JQuery, Oracle 11g, Mysql, MongoDB, Linux, Arduino  
+Java, Spring Framework, Mybatis, Python 2.7, Flask, Go, Node.js, Express, Shell script, Angular, Polymer, React, HTML5, CSS3, JQuery, Oracle 11g, Mysql, MongoDB, Linux, Arduino  
 아직 공부 중  
 Docker, Hadoop
 

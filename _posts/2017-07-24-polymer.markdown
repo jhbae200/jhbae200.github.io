@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Polymer, 알아보자"
+writer: "배진환"
+date: 2017-07-24 17:40:00 +0900
+update: 2017-07-24 17:18:00 +0900
+tags: Polymer WebComponent
+---
+Polymer는 사용자 정의 재사용 가능한 HTML 요소를 만들고이를 사용하여 효율적이고 유지보수가 가능한 앱을 제작하는 데 도움이되는 JavaScript 라이브러리입니다.  
+Polymer는 표준 WebComponent API를 좀 더 쉽게 사용할 수 있게 도와줍니다.
+
+# WebComponent
+재사용 가능한 캡슐화 HTML 태그를 만들수 있는 web platform APIs
+
+웹 컴포넌트는 4가지 기술로 이루어져 있습니다.
+
+## Shadow DOM
+### DOM의 문제점
+DOM을 update하면 css를 다시 계산하고 웹 페이지에 적용되는데 시간이 걸림. 
+
+## Custom Elements
+새로운 HTML 요소를 생성하고 그 자체에 css, scripting을 적용할 수 있습니다.
+
+앱에서 사용되는 코드 수가 줄어들고, 모듈식 코드 사용이 가능하며, 코드 재사용 가능성이 늘어납니다.
+
+{% highlight js %}
+class AppDrawer extends HTMLElement {...}
+window.customElements.define('app-drawer', AppDrawer);
+// 또는 익명 클래스로 customElements를 정의할 수도 있습니다.
+window.customElements.define('app-drawer', class extends HTMLElement {...});
+{% endhighlight %}
