@@ -2,17 +2,12 @@
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for post in site.posts %}
   <url>
     <loc>{{ site.url }}{{ site.baseurl }}/#!{{ post.url }}</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="ko"
-      href="{{ site.url }}{{ site.baseurl }}/#!{{ post.url }}"
-      />
     {% if post.date %}
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
     {% endif %}
@@ -24,11 +19,6 @@
   {% if page.sitemap %}
   <url>
     <loc>{{ site.url }}{{ site.baseurl }}/#!{{ page.url }}</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="ko"
-      href="{{ site.url }}{{ site.baseurl }}/#!{{ page.url }}"
-      />
     {% if page.date %}
     <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
     {% endif %}
@@ -37,17 +27,11 @@
   </url>
   {% endif %}
   {% endfor %}
+  {% for tag in site.tags %}
   <url>
-    <loc>{{ site.url }}{{ site.baseurl }}/#!/about</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="ko"
-      href="{{ site.url }}{{ site.baseurl }}/#!/about"
-      />
-    {% if page.date %}
-    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
-    {% endif %}
-    <changefreq>{{ sitemap.freq | default: 'monthly' }}</changefreq>
-    <priority>{{ sitemap.priority | default: '1.0' }}</priority>
+    <loc>{{ site.url }}{{ site.baseurl }}/search?q={{ tag[0] }}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+  {% endfor %}
 </urlset>

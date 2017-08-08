@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Jinhwan Blog
 email: jhbae200@gmail.com
-source: src
+#source: src
 description: Jinhwan Blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jhbae.in" # the base hostname & protocol for your site, e.g. http://example.com
@@ -23,7 +23,6 @@ github_username:  jhbae200
 
 # Handling Reading
 include: [".htaccess"]
-
 
 # Build settings
 markdown: kramdown

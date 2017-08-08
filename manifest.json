@@ -2,8 +2,8 @@
 ---
 {
   "name": "{{ site.title }}",
-  "short_name": "blog",
-  "start_url": "/#!/home/",
+  "short_name": "{{ site.title }}",
+  "start_url": "/index.html",
   "display": "standalone",
   "theme_color": "#3f51b5",
   "background_color": "#3f51b5",
