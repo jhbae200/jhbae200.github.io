@@ -12,11 +12,20 @@ Polymer는 표준 WebComponent API를 좀 더 쉽게 사용할 수 있게 도와
 # WebComponent
 재사용 가능한 캡슐화 HTML 태그를 만들수 있는 web platform APIs
 
+장점으로는
+1. 위젯 구축을 가능
+2. 신뢰성있게 재사용
+3. 컴포넌트를 수정해도 페이지를 깨트리지 않음
+
 웹 컴포넌트는 4가지 기술로 이루어져 있습니다.
 
 ## Shadow DOM
-### DOM의 문제점
-DOM을 update하면 css를 다시 계산하고 웹 페이지에 적용되는데 시간이 걸림. 
+DOM을 update하면 css를 다시 계산하고 웹 페이지에 적용되는데 시간이 걸림.  
+각각의
+
+## HTML Template
+비활성화 된 복제가 가능한 DOM Chunck.
+반복되는 DOM이 있으면 Template으로 묶어 필요할때 활성화 할 수 있습니다.
 
 ## Custom Elements
 새로운 HTML 요소를 생성하고 그 자체에 css, scripting을 적용할 수 있습니다.
@@ -29,3 +38,28 @@ window.customElements.define('app-drawer', AppDrawer);
 // 또는 익명 클래스로 customElements를 정의할 수도 있습니다.
 window.customElements.define('app-drawer', class extends HTMLElement {...});
 {% endhighlight %}
+
+## HTML Import
+HTML에서 별도의 라이브러리를 사용하지 않고도 HTML을 불러올 수 있게합니다.
+`<link rel="import" href="/path/to/import.html">`
+언제든지 WebComponent를 간단하게 불러올 수 있습니다.
+
+# Polymer cli
+Polymer에서는 초기환경을 쉽게 구성하고 배포, 테스팅, 개발을 도와주는 cli가 있습니다.  
+
+## 설치방법
+1. node버전이 6.x 또는 7.x인지  확인해주세요.
+`node --version`
+
+2. npm을 업데이트합니다. npm 버전이 v3이상이라면 이 순서를 스킵하셔도 됩니다.
+`npm install npm@latest -g`
+
+3. Git이 설치되어 있는지 확인
+`git --version`
+[Git downloads page][].
+
+4. bower 설치
+`npm install -g bower`
+
+5. Polymer CLI 설치.
+`npm install -g polymer-cli`
