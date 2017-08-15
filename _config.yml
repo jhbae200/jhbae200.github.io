@@ -22,7 +22,7 @@ url: "https://jhbae.in" # the base hostname & protocol for your site, e.g. http:
 github_username:  jhbae200
 
 # Handling Reading
-include: [".htaccess"]
+include: [".well-known"]
 
 # Build settings
 markdown: kramdown
