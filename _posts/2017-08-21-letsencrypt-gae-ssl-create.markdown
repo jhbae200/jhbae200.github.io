@@ -36,7 +36,7 @@ command beta, gsutil을 사용할 것이니 설치해주세요.
 Let's encrypt에서 따로 App engine을 인증해주는 도구가 없으니 직접 작성하셔야 합니다.
 
 ## Setting for App Engine
-각 언어에 맞춰서 `gs://my-bucket/ssl/[VERIFICATION_FILE_NAME]`을 바라볼 수 있게 해주세요.
+각 언어에 맞춰서 `gs://my-bucket/ssl/[VERIFICATION_FILE_NAME]`을 바라볼 수 있게 해주세요.  
 go와 php로 작성한 게 있어서 아래는 예제 소스입니다.
 
 ### php
@@ -133,7 +133,6 @@ func acmeChallenge(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, string(slurp))
 }
 {% endhighlight %}
-**
 
 ## Config Domain for App engine
 SSL을 사용할 맞춤 도메인을 추가하여 주세요.
