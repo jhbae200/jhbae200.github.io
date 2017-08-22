@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  App engine에서 Lets encrypt 사용하여 ssl 적용하기
+title:  App engine에서 Lets encrypt 사용해서 ssl 적용하기
 writer: "배진환"
 date: 2017-08-21 14:30:00 +0900
 tags: App-engine, letsencrypt, ssl
