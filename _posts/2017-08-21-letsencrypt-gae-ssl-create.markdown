@@ -28,7 +28,7 @@ user@webserver:~$ ./certbot-auto --help
 <https://cloud.google.com/sdk/docs/quickstarts>
 각 환경에 맞춰서 설치하시기 바랍니다.
 
-command beta, gsutil을 사용할 것이니 설치해주세요.
+command beta, gsutil을 사용할 것이니 설치해주세요.  
 `gcloud components install beta`  
 `gcloud components install gsutil`
 
@@ -116,7 +116,7 @@ func acmeChallenge(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer client.Close()
-	bucketName := os.Getenv('GS_BUCKET')
+	bucketName := os.Getenv("GS_BUCKET")
 	cBucket := client.Bucket(bucketName)
 	rc, err := cBucket.Object(encrypt).NewReader(ctx)
 	if err != nil {
