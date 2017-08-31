@@ -33,10 +33,10 @@ command beta, gsutil을 사용할 것이니 설치해주세요.
 `gcloud components install gsutil`
 
 # Create SSL cert
-Let's encrypt에서 따로 App engine을 인증해주는 도구가 없으니 직접 작성하셔야 합니다.
+Let's encrypt에서 따로 App engine에서 인증해주는 도구가 없으니 직접 작성하셔야 합니다.
 
 ## Setting for App Engine
-각 언어에 맞춰서 `gs://my-bucket/ssl/[VERIFICATION_FILE_NAME]`을 바라볼 수 있게 해주세요.  
+각 언어에 맞춰서 `/.well-known/acme-challenge/[VERIFICATION_FILE_NAME]`로 접근하면 `gs://my-bucket/ssl/[VERIFICATION_FILE_NAME]`의 파일 내용을 출력하게 해주세요.  
 go와 php로 작성한 게 있어서 아래는 예제 소스입니다.
 
 ### php
@@ -89,6 +89,7 @@ import (
 	"google.golang.org/appengine/log"
 	"cloud.google.com/go/storage"
 	"io/ioutil"
+  "os"
 	"context"
 )
 
@@ -115,7 +116,7 @@ func acmeChallenge(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer client.Close()
-	bucketName := "jhbae-live"
+	bucketName := os.Getenv('GS_BUCKET')
 	cBucket := client.Bucket(bucketName)
 	rc, err := cBucket.Object(encrypt).NewReader(ctx)
 	if err != nil {
@@ -211,7 +212,7 @@ IMPORTANT NOTES:
 
 {% highlight text %}
 # m h  dom mon dow   command
-15 3 * * * /FULL/PATH/TO/certbot-auto renew --quiet
+7 3 * * * /FULL/PATH/TO/certbot-auto renew --quiet
 {% endhighlight %}
 
 ![image](/images/post/20170821/ssl.png)  
