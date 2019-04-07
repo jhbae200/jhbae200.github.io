@@ -1,0 +1,102 @@
+html.dark {
+    background: hsl(0, 0%, 16%);
+}
+
+html.dark body {
+    background: hsl(0, 0%, 21%);
+}
+
+html.dark p, html.dark ul, html.dark ol, html.dark strong {
+    color: hsl(0, 0%, 90%);
+}
+
+html.dark a:hover {
+    color: hsl(204, 86%, 53%);
+}
+
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+    color: hsl(0, 0%, 90%);
+}
+
+html.dark footer .light-bulma {
+    display: none;
+}
+
+html.dark footer .dark-bulma {
+    display: initial;
+}
+
+html.dark .navbar {
+    background: hsl(0, 0%, 16%);
+    border-bottom: 1px solid hsl(0, 0%, 16%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+html.dark .jh-navbar-burger {
+    color: #fff
+}
+
+html.dark .navbar-menu .navbar-link, html.dark .navbar-menu a.navbar-item {
+    color: hsl(0, 0%, 90%);
+}
+
+html.dark .navbar-menu .navbar-link.is-active, html.dark .navbar-menu .navbar-link:hover,
+html.dark .navbar-menu a.navbar-item.is-active, html.dark .navbar-menu a.navbar-item:hover {
+    background: hsl(0, 0%, 21%);
+    color: hsl(0, 0%, 100%);
+}
+
+html.dark .field label {
+    color: hsl(0, 0%, 100%);
+}
+
+/* post */
+html.dark .highlighter-rouge {
+    border: 1px solid hsl(0, 0%, 35%);
+    background-color: hsl(0, 0%, 27%);
+}
+
+html.dark .content blockquote {
+    background-color: hsl(0, 0%, 27%);
+    border-left: 5px solid hsl(0, 0%, 15%);
+    padding: 1.25em 1.5em;
+}
+
+/* pagination */
+html.dark .pagination-link, html.dark .pagination-next, html.dark .pagination-previous {
+    color: hsl(0, 0%, 100%);
+}
+
+html.dark .pagination-link.is-current:hover {
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(217, 71%, 40%);
+}
+
+html.dark footer {
+    background: hsl(0, 0%, 16%);
+    border-top: 1px solid hsl(0, 0%, 16%);
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.12);
+}
+
+
+@media screen and (min-width: 1088px) {
+    html.dark .navbar-item.has-dropdown.is-active .navbar-link,
+    html.dark .navbar-item.has-dropdown:hover .navbar-link {
+        background: hsl(0, 0%, 16%);
+    }
+
+    html.dark .navbar-dropdown {
+        background: hsl(0, 0%, 16%);
+        border-top: 2px solid hsl(0, 0%, 16%);
+    }
+
+    html.dark .navbar-divider {
+        background: hsl(0, 0%, 16%);
+    }
+}
+
+@media screen and (max-width: 1087px) {
+    .navbar-menu {
+        background-color: hsl(0, 0%, 16%);
+    }
+}

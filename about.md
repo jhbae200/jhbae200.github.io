@@ -1,8 +1,8 @@
 ---
-layout: default
+layout: about
 title: About Me
 permalink: /about
-sitemap: yes
+sitemap: no
 date: 2017-02-24 12:23:00 +0900
 update: 2017-04-18 20:59:00 +0900
 ---
@@ -42,9 +42,12 @@ __2016.08.31 ~ 2017.02.23 (6개월)__ 한국아이티인재개발원 빅데이�
 
 # 사용기술
 어느정도 능숙하게 다룰 수 있음  
-Java, Spring Framework, Mybatis, Python 2.7, Flask, Go, Node.js, Express, Shell script, HTML5, CSS3, JQuery, Oracle 11g, Mysql, MongoDB, Linux, Arduino  
+Java, Go, Node.js, HTML5, CSS3, React  
+Mysql, MongoDB  
+Arduino, Linux, Kubernetes, Istio  
+FFmpeg  
 아직 공부 중  
-Docker, Hadoop
+Eos
 
 # 경력사항 
 
@@ -132,8 +135,42 @@ __모바일에서도 포트폴리오 작성이 가능합니다.__
 
 ## 애니펜
 2017-03-21 ~ {{ "now" | date: "%Y-%m-%d" }}
+
 현재 재직중
 
+### AnibeaR 서비스 개발
+AR을 기반으로 한 소셜미디어 서비스에서 촬영한 AR영상을 인코딩하고 영상 스트리밍을 제공하고 SNS 서비스를 개발했습니다.
+- Java Spring 기반의 SNS API 서버 개발
+- SNS 서비스를 관리할 수 있는 관리자 페이지 개발
+- Kubernetes, Istio 사용하여 안정적인 라이브 서비스와 버전별 API 서버 분기
+- Cloud Gpu를 활용하여 AR영상 촬영물을 인코딩하고 스트리밍 서비스를 제공하는 인코딩 서버 개발
+
+### Anipen 홈페이지 개발
+React를 활용하여 반응형 홈페이지를 개발했습니다.
+<div class="columns">
+  <div class="column is-half">
+    <img class="materialboxed2" src="/images/about/anipen.png" width="100%" attr="anipen.png"/>
+  </div>
+</div>
+
+### Kcon ARlive 스트리밍 개발
+FFmpeg 으로 한개의 스트리밍을 다수의 스트리밍 주소로 보내는 서비스 개발.
+
+<div class="columns">
+  <div class="column">
+    <img class="materialboxed2" src="/images/about/arlive.png" width="100%" attr="arlive.png"/>
+  </div>
+  <div class="column">
+    <img class="materialboxed2" src="/images/about/arlive-la.png" width="100%" attr="arlive-la.png"/>
+  </div>
+  <div class="column">
+    <img class="materialboxed2" src="/images/about/arlive-mama.png" width="100%" attr="arlive-mama.png"/>
+  </div>
+</div>
+
+[KCON 2018 JAPAN Red carpet event 생중계](https://youtu.be/YkXjyR1X_Bk)  
+[KCON 2018 NY Red carpet event 생중계](https://youtu.be/HoW3OE5OVZI)  
+[KCON 2018 LA Red carpet event 생중계](https://youtu.be/2kqRueK2fzU)  
 
 # 프로젝트
 
