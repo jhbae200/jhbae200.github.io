@@ -38,11 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     if (localStorage.getItem('dark')) {
-        document.documentElement.classList.add('dark');
         document.querySelector("#darkMode").checked = document.documentElement.classList.contains('dark');
     }
 });
 
+if (localStorage.getItem('dark')) {
+    document.documentElement.classList.add('dark');
+}
 
 function toggleDark(event) {
     document.documentElement.classList.toggle('dark');
