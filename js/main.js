@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-if (localStorage.getItem('dark')) {
-    document.documentElement.classList.add('dark');
+if (!localStorage.getItem('dark')) {
+    document.documentElement.classList.remove('dark');
 }
 
 function toggleDark(event) {

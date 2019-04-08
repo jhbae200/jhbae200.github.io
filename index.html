@@ -2,17 +2,17 @@
 layout: default
 ---
 <div class="posts">
-{% for post in paginator.posts %}
-<article class="content">
-    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-    <p class="author">
-        <span class="date">{{ post.date | date: "%Y-%m-%d %H:%M KST"}}</span>
-    </p>
-    <div class="content">
-        {{ post.excerpt }}
-    </div>
-</article>
-{% endfor %}
+    {% for post in paginator.posts %}
+    <article class="content">
+        <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+        <p class="author">
+            <span class="date">{{ post.date | date: "%Y-%m-%d %H:%M KST"}}</span>
+        </p>
+        <div class="content">
+            {{ post.excerpt }}
+        </div>
+    </article>
+    {% endfor %}
 </div>
 <!-- Pagination links -->
 <nav aria-label="pagination" class="pagination is-centered" role="navigation">
@@ -34,26 +34,11 @@ layout: default
         {% endif %}
         {% for page in (2..paginator.total_pages) %}
         {% if paginator.page == page %}
-        <li><a aria-current="page" aria-label="Goto page {{ page }}" class="pagination-link is-current">{{ page }}</a></li>
+        <li><a aria-current="page" aria-label="Goto page {{ page }}" class="pagination-link is-current">{{ page }}</a>
+        </li>
         {% else %}
         <li><a aria-label="Goto page {{ page }}" class="pagination-link" href="/{{ page }}/">{{ page }}</a></li>
         {% endif %}
         {% endfor %}
     </ul>
 </nav>
-
-<!--
-<div class="pagination">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
-    {% else %}
-    <span class="previous">Previous</span>
-    {% endif %}
-    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-    {% else %}
-    <span class="next ">Next</span>
-    {% endif %}
-</div>
--->

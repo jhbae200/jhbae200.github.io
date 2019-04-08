@@ -34,10 +34,12 @@ footer .dark-bulma {
         display: none;
     }
 }
+
 @media screen and (max-width: 1087px) {
     .navbar-dropdown {
         display: none;
     }
+
     .navbar-item.has-dropdown.is-active .navbar-dropdown {
         display: block;
     }
