@@ -100,6 +100,8 @@ gcp cloud gpu, kubernetes, [bull](https://github.com/OptimalBits/bull), Redis, F
   <div class="column is-full">
     <img class="materialboxed2" src="/images/about/encoding-01.png" width="100%" attr="encoding-01.png"/>
   </div>
+</div>
+<div class="columns">
   <div class="column is-one-third">
     <img class="materialboxed2" src="/images/about/encoding-02.png" width="100%" attr="encoding-02.png"/>
   </div>
