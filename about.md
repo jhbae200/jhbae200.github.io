@@ -9,7 +9,7 @@ update: 2017-04-18 20:59:00 +0900
 관련 자료는 [https://drive.google.com/open?id=0BygbtABrAJ-8ZTl6bW5lUkYyaHM](https://drive.google.com/open?id=0BygbtABrAJ-8ZTl6bW5lUkYyaHM)에서도 볼 수 있습니다.
 1. [프로필](#프로필)
 2. [경력사항](#경력사항)
-  * [애니펜 (2017-03-21 ~ {{ "now" | date: "%Y-%m-%d" }})](#애니펜)
+  * [애니펜 (2017-03-21 ~ {{ "now" | date: "%Y-%m-%d" }} 재직중)](#애니펜)
   * [피치트리 (2015-08-01 ~ 2016-02-29 7개월)](#피치트리)
   * [젤리스케치 (2015-03-25 ~ 2017-07-31 4개월)](#젤리스케치)
 3. [프로젝트](#프로젝트)
@@ -91,7 +91,32 @@ FFmpeg 으로 한개의 스트리밍을 다수의 스트리밍 주소로 보내�
 
 [KCON 2018 JAPAN Red carpet event 생중계](https://youtu.be/YkXjyR1X_Bk)  
 [KCON 2018 NY Red carpet event 생중계](https://youtu.be/HoW3OE5OVZI)  
-[KCON 2018 LA Red carpet event 생중계](https://youtu.be/2kqRueK2fzU) 
+[KCON 2018 LA Red carpet event 생중계](https://youtu.be/2kqRueK2fzU)
+
+### Video Encoding Server 개발
+gcp cloud gpu, kubernetes, [bull](https://github.com/OptimalBits/bull), Redis, FFmpeg을 활용하여 다운로드, 화질별 인코딩, 썸네일링, 업로드 작업을 병렬로 처리하게 개발.
+
+<div class="columns">
+  <div class="column is-full">
+    <img class="materialboxed2" src="/images/about/encoding-01.png" width="100%" attr="encoding-01.png"/>
+  </div>
+  <div class="column is-one-third">
+    <img class="materialboxed2" src="/images/about/encoding-02.png" width="100%" attr="encoding-02.png"/>
+  </div>
+</div>
+
+### Miniforcex 게임서버 개발
+3가지 재화가 있는 게임 서버를 개발.
+
+### OpenId Connect 스펙이 포함된 통합 회원 서버 개발
+OpenId Connect의 스펙이 포함된 통합 회원 서버를 개발.  
+OAuth 2.0, OpenId Connect 스펙 문서를 읽고 직접 구현하는 과정을 통해 개발했습니다.
+
+<div class="columns">
+  <div class="column is-one-third">
+    <img class="materialboxed2" src="/images/about/encoding-02.png" width="100%" attr="account_server-02.png"/>
+  </div>
+</div>
 
 ## 피치트리
 2015-08-01 ~ 2016-02-29 (7개월)
@@ -100,7 +125,7 @@ FFmpeg 으로 한개의 스트리밍을 다수의 스트리밍 주소로 보내�
 - 라즈베리파이로 cups를 설치하여 네트워크 프린트 서버를 구축  
 - 회사 네트워크 연결 작업  
 - 공용 컴퓨터 관리
-  
+
 ### 피치트리 홈페이지 개발  
 - Aws, Python Flask, JQuery, Bootstrap 사용하여 구축(소개, 방문예약, 맴버십)  
 - 방문예약시 예약 내용을 메일로 전송하였는데, Gmail의 smtp를 이용하여 전송.  
