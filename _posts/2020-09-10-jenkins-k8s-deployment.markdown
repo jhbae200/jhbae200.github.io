@@ -2,7 +2,7 @@
 layout: post
 title:  "jenkins에서 kubernetes deployment rollout 기다리기"
 writer: "배진환"
-date: 2019-04-08 22:45:00 +0900
+date: 2020-09-10 15:31:00 +0900
 tags: kubernetes jenkins
 ---
 jenkins로 이미지를 빌드해서 롤아웃 요청을 보내는데 롤아웃 성공 여부와 관계없이 빌드가 
