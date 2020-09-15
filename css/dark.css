@@ -72,6 +72,10 @@ html.dark .pagination-link.is-current:hover {
     background-color: hsl(217, 71%, 40%);
 }
 
+html.dark .highlight pre {
+    background-color: #333;
+}
+
 html.dark footer {
     background: hsl(0, 0%, 16%);
     border-top: 1px solid hsl(0, 0%, 16%);
