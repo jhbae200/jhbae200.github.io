@@ -29,6 +29,10 @@ footer .dark-bulma {
     min-height: 900px;
 }
 
+.posts .content .title{
+    font-size: 2em;
+}
+
 @media screen and (min-width: 1088px) {
     .jh-navbar-burger {
         display: none;

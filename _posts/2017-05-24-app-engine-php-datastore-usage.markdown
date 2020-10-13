@@ -8,7 +8,7 @@ description: "app engine에서 datastore 사용하기 및 php-gds 라이브러�
 ---
 
 app engine php 환경에서 datastore를 사용하려는데 번들 되어있는 구글 sdk를 쓰려니까 설계부터 복잡하기도 하고 내장되어있는 datastore sdk의 버전도 v1beta3 이길래 다른 라이브러리를 찾다가 좀 더 쉽고 간단하게 만들 수 있는 [php-gds][php-gds]가 눈에 들어왔다.  
-php-gds와 silex를 이용해 간단한 api 서버를 구성해보고 발생하는 문제점을 해결해보도록 하겠다.
+php-gds와 php-silex를 이용해 간단한 api 서버를 구성해보고 발생하는 문제점을 해결해보도록 하겠다.
 
 #### app engine php project 생성 및 구성 ####
 먼저 앱 실행에 필요한 app.yaml, 의존성 관리를 위한 [composer][composer]를 구성하도록 한다.
