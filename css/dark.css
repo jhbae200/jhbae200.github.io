@@ -6,6 +6,10 @@ html.dark body {
     background: hsl(0, 0%, 21%);
 }
 
+html.dark .posts div.content {
+    color: hsl(0, 0%, 90%);
+}
+
 html.dark p, html.dark ul, html.dark ol, html.dark strong {
     color: hsl(0, 0%, 90%);
 }
