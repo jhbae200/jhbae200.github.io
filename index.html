@@ -9,7 +9,7 @@ layout: default
             <span class="date">{{ post.date | date: "%Y-%m-%d %H:%M KST"}}</span>
         </p>
         <div class="content">
-            {{ post.excerpt }}
+            {{ post.excerpt | strip_html }}
         </div>
     </article>
     {% endfor %}
