@@ -241,14 +241,14 @@ spec:
 kafka operator에 메트릭 설정해주면 프로메테우스에서 수집 잘함 굳;
 
 # [Schema Registry](https://github.com/confluentinc/schema-registry) 대신 [Apicurio Registry](https://github.com/Apicurio/apicurio-registry) 사용  
-https://github.com/Apicurio/apicurio-registry-demo 이거 말고 설정하는 거 어디서 좀 자세하게 봤었는데 ..
+<https://github.com/Apicurio/apicurio-registry-demo> 이거 말고 설정하는 거 어디서 좀 자세하게 봤었는데 ..
 
 # [kafka-connect-storage-cloud](https://github.com/confluentinc/kafka-connect-storage-cloud) Google Storage 호환 방법..
 aws에 맞춰져있는 kafka-connect-storage-cloud와 달리 구글 버전인 [Kafka Connect GCS](https://www.confluent.io/hub/confluentinc/kafka-connect-gcs) 이것도 있지만 유료;;
 
-어떻게 할 방법이 없나 찾다가 https://cloud.google.com/storage/docs/migrating 이거 찾아서 키 셋팅하고 해봤는데 https://cloud.google.com/storage/docs/migrating#methods-comparison 여기보면 멀티파트 업로드가 호환되지 않음ㅠ
+어떻게 할 방법이 없나 찾다가 <https://cloud.google.com/storage/docs/migrating> 이거 찾아서 키 셋팅하고 해봤는데 <https://cloud.google.com/storage/docs/migrating#methods-comparison> 여기보면 멀티파트 업로드가 호환되지 않음ㅠ
 
-다음으로 찾은건 s3 api와 호환된다는 [minio](https://github.com/minio/minio) https://docs.min.io/docs/minio-gateway-for-gcs.html gcs gateway를 지원한다길래 아래와 같이 구조를 생각하고 테스트 해봄
+다음으로 찾은건 s3 api와 호환된다는 [minio](https://github.com/minio/minio) <https://docs.min.io/docs/minio-gateway-for-gcs.html> gcs gateway를 지원한다길래 아래와 같이 구조를 생각하고 테스트 해봄
 
 ![image](/images/post/20200127/diagram.png)
 
