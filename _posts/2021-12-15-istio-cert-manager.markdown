@@ -2,7 +2,7 @@
 layout: post
 title:  "Kubernetes 1.22 이상에서 istio + cert-manager 설정시 ingress 생성 문제"
 writer: "배진환"
-date:   2021-01-27 16:00:00 +0900
+date:   2021-12-15 16:00:00 +0900
 tags: istio cert-manager kubernetes 
 ---
 `networking.k8s.io/v1beta1, IngressClass`가 k8s 버전 1.22에서 제거되면서 `ClusterIssuer`에서 ingress class가 
