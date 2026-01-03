@@ -108,9 +108,11 @@ gcp cloud gpu, kubernetes, [bull](https://github.com/OptimalBits/bull), Redis, F
 </div>
 
 ### Miniforcex 게임서버 개발
+(Spring, Mysql)  
 3가지 재화가 있는 게임 서버를 개발.
 
 ### OpenId Connect 스펙이 포함된 통합 회원 서버 개발
+(Spring, Mysql, Redis)  
 OpenId Connect의 스펙이 포함된 통합 회원 서버를 개발.  
 OAuth 2.0, OpenId Connect 스펙 문서를 읽고 직접 구현하는 과정을 통해 개발했습니다.
 
@@ -119,6 +121,47 @@ OAuth 2.0, OpenId Connect 스펙 문서를 읽고 직접 구현하는 과정을 
     <img class="materialboxed2" src="/images/about/encoding-02.png" width="100%" attr="account_server-02.png"/>
   </div>
 </div>
+
+### Catchteenieping 서버,관리자 개발
+(Spring, Mysql)  
+캐치티니핑 서버, 관리자 개발
+
+### AR 키오스크 서버 및 관리자 개발
+(Spring, Mysql, App Engine)  
+2020 ~ 2026(ing) AR 키오스크의 서버 및 관리자 개발 및 유지보수  
+다양한 컨텐츠 대응 및 지속적인 랜딩페이지 디자인 적용
+
+### WebRTC 서버 개발
+(Nodejs, Mediasoup, Mysql, Redis)  
+SFU 방식으로 Mediasoup을 이용한 WebRTC 서버 개발  
+SFU 방식을 기반으로 Auto Scaling 기술 R&D
+
+### AR을 활용한 교육 서비스
+(Spring, Mysql, Nodejs, Mediasoup, WebRTC, Redis)  
+정부과제로 AR를 활용한 교육 서비스에 사용될 WebRTC 서버, Api 서버 개발
+
+### Toodle Api, Toodle WebRTC 서버 개발
+(Spring, Mysql, Nodejs, Mediasoup, WebRTC, Redis)  
+WebRTC R&D 서버를 기반으로 랜덤 채팅의 서버 개발
+
+### ComeEarth 서버 개발
+(Spring, Mysql)  
+메타버스 컨셉의 서비스를 위한 서버 개발
+
+### 산리오 팝업 키오스크 서버 개발
+(Spring, Mysql)  
+AR 키오스크와 비슷하게 팝업 키오스크 전용으로 서버 개발 요청
+
+### 1Thepic 서버 및 관리자 개발
+(Spring, Mysql, Lambda(nodejs), Aws Batch)
+
+### LoomLoom 서버, 관리자 개발
+(Spring, Mysql, Lambda(Nodejs), Gemini, Veo, Suno)  
+생성형 AI 플랫폼의 서버 및 관리자 개발.  
+
+### 인생사 첩첩산중 Api 서버 개발
+(Firebase functions(Nodejs), Firestore, Gemini 3)
+이용자의 사주를 기반으로 운세풀이 해주는 서비스 개발.
 
 ## 피치트리
 2015-08-01 ~ 2016-02-29 (7개월)
